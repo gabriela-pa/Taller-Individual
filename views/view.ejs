@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./templates/header')%>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista | ALTERNANCIA</title>
+</head>
+<body>
+  <%- include('./templates/menu')%>
+  
+
+  <div class="container">
+    
+    <div class="row"><!-- -->
+      <div class="col-12 text-center">
+        <table class="table bm-2">
+          <thead>
+            <th>Código/Cédula</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Cargo</th>
+            <th>¿Contacto con caso positivo?</th>
+            <th>Fecha de ingreso</th>
+          </thead>
+          <tbody>
+              <% persona.forEach(persona =>{%>
+                  <tr>
+                    <td><%= persona.txtCedula %></td>  
+                    <td><%= persona.txtNombres%></td>
+                    <td><%= persona.txtApellidos%></td>
+                    <td><%= persona.sltCargo %></td>
+                    <td>
+                      
+                        <% if(persona.sltContacto === 'No'){ %>
+                          <span class="badge bg-success">CON ACCESO</span>
+                        <% }else{ %>
+                          <span class="badge bg-danger">SIN ACCESO</span>
+                            <% }%>
+                      </td>
+                    <td><%= persona.dtFecha %></td>              
+                  </tr>
+              <%})%>
+          </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  <%- include('./templates/footer')%>
+</body>
+</html>

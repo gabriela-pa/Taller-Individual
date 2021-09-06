@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./templates/header')%>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | ALTERNANCIA</title>
+</head>
+<body>
+  <%- include('./templates/menu')%>
+  
+
+  <div class="container">
+       <form method="post">
+         <div class="row">
+           <div class="col-12">
+             <div class="row">
+               <div class="col-6">
+                 <label>Nombres:</label>
+                 <input type="text" name="txtNombres" class="form-control" id="txtNombres" pattern="[a-zA-z\s]+" required placeholder="Nombres">
+                </div>
+                <div class="col-6">
+                  <label>Apellidos:</label>
+                  <input type="text" name="txtApellidos" id="txtApellidos" pattern="[a-zA-z\s]+" class="form-control"  required placeholder="Apellidos">
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-12 mt-2">
+                <div class="row">
+                  <div class="col-6">
+                    <label>Cargo:</label>
+                    <select name="sltCargo" class="form-select form-control" id="sltCargo">
+                      <option value="Estudiante">Estudiante</option>
+                      <option value="Docente">Docente</option>
+                      <option value="Administrativo">Administrativo</option>
+                    </select>
+                  </div>
+                  <div class="col-6">
+                    <label >Código/Cédula:</label>
+                    <input type="text" name="txtCedula" id="txtCedula" required pattern="[0-9]+" class="form-control" placeholder="Código/Cédula:">                  
+                  </div>
+                </div>
+            </div>
+            </div>
+            <div class="row mt-5">
+              <div class="col-6">
+                <p>¿Ha tenido contacto con personas positivas de COVID-19 en los últimos 14 días?</p>
+                <select name="sltContacto" class="form-select form-control" id="sltContacto">
+                  <option value="Si">Si</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label >Fecha de ingreso</label>
+                <input type="date" name="dtFecha" required class="form-control" id="dtFecha">
+              </div>
+            </div>
+            <div class="col-12 mt-4">
+              <button type="submit" class="btn btn-success">Insertar</button>
+            </div>
+          
+        </form>
+  </div>
+  <%- include('./templates/footer')%>
+</body>
+</html>
